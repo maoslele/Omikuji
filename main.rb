@@ -40,6 +40,18 @@ def calc_fortune
     fortune = "凶"
   end
   puts "今日の運勢は#{fortune}です"
+  show_luckystuff
+end
+
+def show_luckystuff
+  lucky_item = ["折りたたみ傘", "犬", "ポップコーン", "カメラ", "メガネ", "ジンジャーエール", "消防車"]
+  random = Random.new
+  lucky_item_num = random.rand(0..6)
+  lucky_num = random.rand(1..100)
+  puts <<~TEXT
+  ラッキーアイテム：#{lucky_item[lucky_item_num]}
+  ラッキーナンバー：#{lucky_num}
+  TEXT
 end
 
 main
