@@ -32,19 +32,19 @@ def calc_fortune
     stars << "★ " * fortune_num
   when 5
     fortune = "吉"
-    stars << "★ " * fortune_num
+    stars << ("★ " * fortune_num) + ("☆ " * (6 - fortune_num))
   when 4
     fortune = "中吉"
-    stars << "★ " * fortune_num
+    stars << ("★ " * fortune_num) + ("☆ " * (6 - fortune_num))
   when 3
     fortune = "小吉"
-    stars << "★ " * fortune_num
+    stars << ("★ " * fortune_num) + ("☆ " * (6 - fortune_num))
   when 2
     fortune = "末吉"
-    stars << "★ " * fortune_num
+    stars << ("★ " * fortune_num) + ("☆ " * (6 - fortune_num))
   else
     fortune = "凶"
-    stars << "★ " * fortune_num
+    stars << ("★ " * fortune_num) + ("☆ " * (6 - fortune_num))
   end
   puts "今日の運勢は#{fortune}です"
   puts stars
