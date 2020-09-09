@@ -23,30 +23,18 @@ def input
 end
 
 def calc_fortune
+  fortune = ["凶", "末吉", "小吉", "中吉", "吉", "大吉"]
+  stars = []
   random = Random.new
   fortune_num = random.rand(1..6)
-  stars = []
-  case fortune_num
-  when 6
-    fortune = "大吉"
+
+  if fortune_num == 6
     stars << "★ " * fortune_num
-  when 5
-    fortune = "吉"
-    stars << ("★ " * fortune_num) + ("☆ " * (6 - fortune_num))
-  when 4
-    fortune = "中吉"
-    stars << ("★ " * fortune_num) + ("☆ " * (6 - fortune_num))
-  when 3
-    fortune = "小吉"
-    stars << ("★ " * fortune_num) + ("☆ " * (6 - fortune_num))
-  when 2
-    fortune = "末吉"
-    stars << ("★ " * fortune_num) + ("☆ " * (6 - fortune_num))
   else
-    fortune = "凶"
     stars << ("★ " * fortune_num) + ("☆ " * (6 - fortune_num))
   end
-  puts "今日の運勢は#{fortune}です"
+
+  puts "今日の運勢は#{fortune[fortune_num-1]}です"
   puts stars
   show_luckystuff
 end
