@@ -34,9 +34,17 @@ def calc_fortune
     stars << ("★ " * fortune_num) + ("☆ " * (6 - fortune_num))
   end
 
-  puts "今日の運勢は#{fortune[fortune_num-1]}です"
+  wait_proc
+  puts "今日の運勢は#{fortune[fortune_num-1]}です!"
   puts stars
   show_luckystuff
+end
+
+def wait_proc
+  for i in 1..3
+    sleep(0.3)
+    i == 3 ? (print "ズバリ...") : (puts "...")
+  end
 end
 
 def show_luckystuff
